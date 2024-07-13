@@ -46,6 +46,13 @@ SLresult audioRecorder_setPreset(CAudioRecorder* ar, SLuint32 recordPreset) {
     case SL_ANDROID_RECORDING_PRESET_VOICE_COMMUNICATION:
         newRecordSource = AUDIO_SOURCE_VOICE_COMMUNICATION;
         break;
+    case SL_ANDROID_RECORDING_PRESET_VOICE_CALL:
+        //SL_ANDROID_RECORDING_PRESET_VOICE_CALL preset is for incall voice recording.
+        //According to 
+        //https://developer.android.com/reference/android/media/MediaRecorder.AudioSource.html
+        //the AudioSource is AUDIO_SOURCE_VOICE_CALL.
+        newRecordSource = AUDIO_SOURCE_VOICE_CALL;
+        break;
     case SL_ANDROID_RECORDING_PRESET_NONE:
         // it is an error to set preset "none"
     default:
@@ -76,7 +83,6 @@ SLresult audioRecorder_getPreset(CAudioRecorder* ar, SLuint32* pPreset) {
         break;
     case AUDIO_SOURCE_VOICE_UPLINK:
     case AUDIO_SOURCE_VOICE_DOWNLINK:
-    case AUDIO_SOURCE_VOICE_CALL:
         *pPreset = SL_ANDROID_RECORDING_PRESET_NONE;
         break;
     case AUDIO_SOURCE_VOICE_RECOGNITION:
@@ -87,6 +93,11 @@ SLresult audioRecorder_getPreset(CAudioRecorder* ar, SLuint32* pPreset) {
         break;
     case AUDIO_SOURCE_VOICE_COMMUNICATION:
         *pPreset = SL_ANDROID_RECORDING_PRESET_VOICE_COMMUNICATION;
+        break;
+    case AUDIO_SOURCE_VOICE_CALL:
+        //Mapping SL_ANDROID_RECORDING_PRESET_VOICE_CALL present to AUDIO_SOURCE_VOICE_CALL,
+        //in case what to know what is the present for incall recording (AUDIO_SOURCE_VOICE_CALL)
+        *pPreset = SL_ANDROID_RECORDING_PRESET_VOICE_CALL;
         break;
     default:
         *pPreset = SL_ANDROID_RECORDING_PRESET_NONE;

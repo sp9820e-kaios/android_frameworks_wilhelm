@@ -93,7 +93,6 @@ LOCAL_SRC_FILES:=                     \
         android/android_AudioToCbRenderer.cpp \
         android/android_GenericMediaPlayer.cpp\
         android/android_GenericPlayer.cpp     \
-        android/android_LocAVPlayer.cpp       \
         android/android_StreamPlayer.cpp      \
         android/android_Effect.cpp            \
         android/util/AacAdtsExtractor.cpp     \
@@ -135,6 +134,7 @@ LOCAL_SRC_FILES:=                     \
         itf/IVideoDecoderCapabilities.cpp \
         itf/IVirtualizer.c                \
         itf/IVolume.c
+
 
 EXCLUDE_SRC :=                            \
         sync.c                            \
@@ -185,12 +185,10 @@ LOCAL_SHARED_LIBRARIES :=         \
         libbinder                 \
         libstagefright            \
         libstagefright_foundation \
-        libstagefright_http_support \
         libcutils                 \
         libgui                    \
         libdl                     \
         libeffects
-
 
 
 LOCAL_MODULE := libwilhelm

@@ -1500,7 +1500,7 @@ SLresult android_audioPlayer_realize(CAudioPlayer *pAudioPlayer, SLboolean async
         pAudioPlayer->mAndroidObjState = ANDROID_READY;
         }
         break;
-
+#if 0
     //-----------------------------------
     // MediaPlayer
     case AUDIOPLAYER_FROM_URIFD: {
@@ -1561,7 +1561,7 @@ SLresult android_audioPlayer_realize(CAudioPlayer *pAudioPlayer, SLboolean async
 
         }
         break;
-
+#endif
     //-----------------------------------
     // StreamPlayer
     case AUDIOPLAYER_FROM_TS_ANDROIDBUFFERQUEUE: {

@@ -42,6 +42,10 @@ extern "C" {
 /**   uses the main microphone tuned for audio communications */
 #define SL_ANDROID_RECORDING_PRESET_VOICE_COMMUNICATION ((SLuint32) 0x00000004)
 
+/**   uses the mix result of main microphone (uplink) and
+ *    remote voice (downlink) during the voice call */
+#define SL_ANDROID_RECORDING_PRESET_VOICE_CALL ((SLuint32) 0x00000005)
+
 /*---------------------------------------------------------------------------*/
 /* Android AudioPlayer configuration                                         */
 /*---------------------------------------------------------------------------*/

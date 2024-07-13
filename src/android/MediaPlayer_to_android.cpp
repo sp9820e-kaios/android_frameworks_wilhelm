@@ -424,6 +424,7 @@ XAresult android_Player_realize(CMediaPlayer *mp, SLboolean async) {
         mp->mAVPlayer->init(player_handleMediaPlayerEventNotifications, (void*)mp);
         }
         break;
+#if 0
     case AUDIOVIDEOPLAYER_FROM_URIFD: {
         mp->mAVPlayer = new android::LocAVPlayer(&ap_params, true /*hasVideo*/);
         mp->mAVPlayer->init(player_handleMediaPlayerEventNotifications, (void*)mp);
@@ -448,6 +449,7 @@ XAresult android_Player_realize(CMediaPlayer *mp, SLboolean async) {
         }
         }
         break;
+#endif
     case INVALID_TYPE: // intended fall-through
     default:
         SL_LOGE("Unable to realize MediaPlayer, invalid internal Android object type");
